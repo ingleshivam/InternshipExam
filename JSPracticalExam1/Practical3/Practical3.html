@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>
+Practical 3
+</title>
+<style>
+	.main{
+		margin-top:3%;
+		width:25%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+	#result{
+		display:inline-block;
+	}
+
+	input{
+		margin-top:10px;
+		margin-bottom:10px;
+		padding:8px;
+		font-size:20px;
+		width:100%;
+	}
+
+	.startN,.endN,.resultBtn{
+		width:100%;
+		padding:10px;
+		margin-left:auto;
+		margin-right:auto;	
+	}
+	
+	label,#result{
+		font-size:20px;
+		color:green;
+	}
+
+	input[type="button"]{
+		margin-top:20px;
+		width:100%;
+	}
+
+	.pstmt{
+		width:30%;
+		font-size:18px;
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:10%;
+	}
+</style>
+</head>
+<body>
+<div class="pstmt">
+	<p align="justify"><strong>Problem Statement : </strong>User will enter start number and end number and click on ok button. when user click on ok button it should display all amstrong numbers between start number and end number. also do the validation for that end number should be greater than start number.</p>
+</div>
+<div class="container">
+	<div class="main">
+		<div class="startN">
+			<label>Enter Start No : </label><br>
+			<input type="text" id="startNumber" name="startNumber"/>
+		</div>
+		<div class="endN">
+			<label>Enter End No &nbsp;:</label><br>
+			<input type="text" id="endNumber" name="endNumber"/>
+		</div>
+		<div class="resultBtn">
+			<b><label>Result : </label><div id="result"></div></b><br>	
+			<input type="button" id="findAmstrong"  onclick="findAmstrong()"value="OK"/>	
+		</div>
+	</div>
+</div>
+<script>
+	function findAmstrong(){
+		var sNo = parseInt(document.getElementById("startNumber").value);
+		var eNo = parseInt(document.getElementById("endNumber").value);
+		var temp=0;
+		var sum =0;
+		var dig =0;
+		var arrayOfAmstrong = [];
+		if(sNo < eNo){
+		for(var i=sNo;i<=eNo;i++){
+			var temp = i;
+			while(temp != 0){
+				dig =  temp % 10
+				let a= parseInt(dig);
+				sum = sum + (a*a*a);
+				temp = parseInt(temp/10);
+			}
+			
+			if(sum == i){
+				arrayOfAmstrong.push(sum);
+			}
+			document.getElementById("result").innerText=arrayOfAmstrong;
+			var sum=0;
+			
+		}
+		}else{
+			alert("END NUMBER SHOULD BE GREATER THAN START NUMBER");
+		}
+	}
+</script>
+</body>
+</html>

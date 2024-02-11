@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>
+Practical 5
+</title>
+<style>
+	.main{
+		margin-top:2%;
+		width:20%;
+		font-size:20px;
+		padding:10px;	
+		margin-left:auto;
+		margin-right:auto;
+	}
+	input{
+		margin-top:10px;
+		margin-bottom:10px;
+		padding:10px;
+		width:100%;
+		font-size:20px;
+	}
+	
+	.pstmt{
+		
+		width:33%;
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:13%;	
+		font-size:18px;
+	}
+</style>
+</head>
+<body>
+<div class="pstmt">
+	<p align="justify"><strong>Problem Statement : </strong>User will enter number in text box and click on ok button. When clicked on ok button it should display additon of all prime digits from that number in span tag.</p>
+</div>
+<div class="main">
+	<label>Enter Number</label><br>
+	<input type="text" id="enterNumber" required/><br>
+	<label style="color:red;"><b>Result : <span id="result"></span></b></label><br>
+	<input type="submit" value="OK" onclick="findPrime()"/>
+</div>
+<script>
+	function findPrime(){
+		var n = parseInt(document.getElementById("enterNumber").value);
+		if(n<=0){
+			alert("Please,Enter Number !");
+		}else{
+		var sum=0;
+		var dig =0;
+		var count =0;
+		while(n!=0){
+			dig = n%10;
+			var a = parseInt(dig);
+			for(var i=1;i<=dig;i++){
+				if(a % i==0){
+					count++;
+				}
+			}
+			if(count==2){
+				sum = sum+dig;
+			}
+			count=0;
+			n = parseInt(n/10);
+		}
+		console.log(sum);
+		document.getElementById("result").innerHTML=sum;
+		}
+	}
+</script>
+</body>
+</html>

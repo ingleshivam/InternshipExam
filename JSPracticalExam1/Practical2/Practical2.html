@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>
+Practical 2
+</title>
+<style>
+	.main{
+		width:60%;
+		margin-right:auto;
+		margin-left:auto;
+		padding:10px;
+	}
+
+	.first,.second,.third,.fourth{
+		border:1px solid grey;
+		padding:20px;
+		margin-top:10px;
+	}
+	
+	.first{
+		width:25%;
+	}
+
+	.second{
+		width:50%;
+	}
+
+	.third{
+		width:75%;
+	}
+	
+	.controls{
+		margin-top:20px;
+		margin-right:auto;
+		margin-left:auto;	
+		width:20%;
+	}
+
+	#enterStepNumber{
+		margin-top:10px;
+		margin-bottom:10px;
+	}
+
+	input{
+		width:100%;
+		margin-top:10px;
+		margin-bottom:10px;
+		padding:10px;
+	}
+
+	input[type="button"]{
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
+		padding:10px;
+		width:100%;
+	}
+
+	.pstmt{
+		width:62%;
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:5%;
+		font-size:18px;
+	}
+</style>
+</head>
+<body>
+<div class="pstmt">
+	<p align="justify"><strong>Problem Statement : </strong>User will enter the color and step number, change the background color of the step inputted by the inputted color</p>
+</div>
+<div class="container">
+	<div class="main">
+		<div class="first" id="first">1</div>
+		<div class="second" id="second">2</div>
+		<div class="third" id="third">3</div>
+		<div class="fourth" id="fourth">4</div>
+	</div>
+		
+	<div class="controls">
+		<label for="selectColor">Select Color : </label>
+		<input type="color" name="selectColor"id="selectColor"/>
+		<br>
+		<lebel for="enterStepNumber">Enter Step Number : </label>
+		<input type="text" name="enterStepNumber" id="enterStepNumber"/>
+		<input type="button" value="OK" onclick="changeColor()"/>
+	</div>
+</div>
+
+<script>
+	function changeColor(){
+		var color = document.getElementById("selectColor").value;
+		var step = parseInt(document.getElementById("enterStepNumber").value);
+			
+		if(step==1){
+			document.getElementById("first").style.backgroundColor=color;
+		}else if(step ==2){
+			document.getElementById("second").style.backgroundColor=color;	
+		}else if(step==3){
+			document.getElementById("third").style.backgroundColor=color;
+		}else if(step ==4){
+			document.getElementById("fourth").style.backgroundColor=color;
+		}else{
+			alert("Please enter step number in between 1 to 4");
+		}	
+	}
+</script>
+</body>
+</html>

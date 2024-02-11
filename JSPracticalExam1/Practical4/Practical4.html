@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>
+Practical 4
+</title>
+<style>
+	.main{
+		margin-top:2%;
+		width:100%;
+		margin-left:auto;
+		margin-right:auto;	
+	}
+
+	.divCollection1, .divCollection2, .divCollection3{
+		margin-left:auto;
+		margin-right:auto;
+		text-align:center;
+		width:28%;
+	}
+	.first,.second,.third,.fourth,.fifth,.sixth,.seventh,.eighth,.ninth{
+		display:inline-block;
+		padding:20px 30px;
+		border:2px solid black;
+		margin-top:10px;
+		font-size:20px;
+		cursor:pointer;
+	}
+	
+	.pstmt{
+		width:25%;
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:14%;
+		font-size:18px;
+	}
+</style>
+</head>
+<body>
+<div class="pstmt">
+	<p align="justify"><strong>Problem Statement : </strong>When user click on any of square it should convert that number to its square number.</p>
+</div>
+	<div class="container">
+		<div class="main">
+			<div class="divCollection1">
+				<div class="first" id="first" onclick="calculateSquare(this)">10</div>
+				<div class="second" id="second" onclick="calculateSquare(this)">20</div>
+				<div class="third" id="third" onclick="calculateSquare(this)">40</div>
+			</div>	
+
+			<div class="divCollection2">
+				<div class="fourth" id="fourth" onclick="calculateSquare(this)">12</div>
+				<div class="fifth" id="fifth" onclick="calculateSquare(this)">10</div>
+				<div class="sixth" id="sixth" onclick="calculateSquare(this)">05</div>
+			</div>	
+
+			<div class="divCollection3">
+				<div class="seventh" id="seventh" onclick="calculateSquare(this)">04</div>
+				<div class="eighth" id="eights" onclick="calculateSquare(this)">08</div>
+				<div class="ninth" id="ninth" onclick="calculateSquare(this)">12</div>
+			</div>		
+		</div>
+	</div>
+
+<script>
+	function calculateSquare(tag){
+		var value = tag.innerText;
+		var square = (value*value*value)
+		tag.innerText = square;
+		tag.style="background-color:pink;";
+	}
+</script>
+</body>
+</html>
